@@ -7,9 +7,6 @@ Moreover, It fixes grammatical errors to enhance your resume even further!
 - [Installation](#installation)
 - [Usage](#usage)
 - [Configuration](#configuration)
-- [File Structure](#file-structure)
-- [Contributing](#contributing)
-- [License](#license)
 - [Authors](#authors)
 - [Acknowledgements](#acknowledgements)
 
