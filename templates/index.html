@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Resume Analyser</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #7b7cbe;
+    }
+
+    h1 {
+      color: black;
+      text-align: center;
+    }
+
+    form {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    input[type="file"] {
+      padding: 10px;
+      border: none;
+      background-color: khaki;
+      margin-right: 10px;
+    }
+
+    input[type="submit"] {
+      padding: 10px 20px;
+      background-color: transparent;
+      color: black;
+      border: none;
+      cursor: pointer;
+    }
+
+    h2 {
+      color: black;
+      margin-top: 30px;
+    }
+
+    pre {
+      font-family: monospace;
+      background-color: khaki;
+      padding: 10px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+    }
+
+    ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    .box {
+      background-color: khaki;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Resume Analyser</h1>
+  <form action="/" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" accept=".pdf">
+    <input type="submit" value="Upload">
+  </form>
+
+  <h2>Extracted Text:</h2>
+  <div class="box">
+    {% if text %}
+
+    <pre>{{ text }}</pre>
+    {% endif %}
+  </div>
+
+  <h2>Grammar Errors:</h2>
+  <div class="box">
+    {% if grammar_errors %}
+    <ul>
+      {% for error in grammar_errors %}
+      {% set i = loop.index0 %}
+      <li>
+        Error: {{ error.correctionType }}<br>
+        Correction: {{ error.suggestion }}<br>
+        Incorrect Text: {{ error.originalText }}<br>
+        Line number: {{ line[i] }}
+      </li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+
+  <h2>Recommended Skills:</h2>
+  <div class="box">
+    {% if skillRec %}
+    <ul>
+      {% for skill in skillRec %}
+      <li>{{ skill }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+
+  <h2>Recommended Certifications:</h2>
+  <div class="box">
+    {% if certificateRec %}
+
+    <ul>
+      {% for certificate in certificateRec %}
+      <li>{{ certificate }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+
+</body>
+
+</html>
