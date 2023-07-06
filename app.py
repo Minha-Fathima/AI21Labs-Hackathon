@@ -4,7 +4,7 @@ from pdf_to_text import pdfToText
 from grammar_check import grammarCheck, getLineNo
 from extraction import Job_Title_Extraction, Skills_Extraction
 from skill_recommendation import skillRecommendation
-from certification_recommendation import certificateRecommendation
+from certificate_recommendation import certificateRecommendation
 
 app = Flask(__name__)
 # app.debug = True
