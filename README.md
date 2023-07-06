@@ -1,6 +1,6 @@
-# Project Name
-
-Brief description of the project and its main features.
+# Re-Check: Resume Analyser
+Re-Check scans resumes and provides personalized recommendations for skills and certification. 
+Moreover, It fixes grammatical errors to enhance your resume even further!
 
 ## Table of Contents
 
